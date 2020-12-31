@@ -27,6 +27,14 @@ enum krautcat_keycodes {
     LGUI_TAB = LGUI_T(KC_TAB),  // Tap is Tab, hold is Left GUI.
     RGUI_DEL = RGUI_T(KC_DEL),  // Tap is Delete, hold is Right GUI.
 
+    LCTL_TAB = LCTL_T(KC_TAB),	// Tab is tap, hold is Left Control.
+    RCTL_ENT = RCTL_T(KC_ENT),  // Enter is tap, hold is Right Control.
+
+    LSFT_ENT = LSFT_T(KC_ENT),	// Enter is tap, hold is Left Shift.
+	RSFT_ESC = RSFT_T(KC_ESC),	// Escape is tap, hold is Right Shift.
+
+    
+
     LRT_SPC = LT(_KRAUTCAT_RIGHTED, KC_SPC),    // Tap is Space, hold is turn on layer one, _KRAUTCAT_RIGHTED.
     LLT_BSPC = LT(_KRAUTCAT_LEFTED, KC_BSPC),   // Tap is Backspace, hold is turn on layer two, _KRAUTCAT_LEFTED.
 };
@@ -39,7 +47,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     //│             │             │             │             │             │             │                 │             │             │             │             │             │             │             │
     //├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤                 ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┴─────────────┤
     //│             │             │             │             │             │             │                 │             │             │             │             │             │                           │
-        LGUI_TAB,     KC_A,         KC_S,         KC_D,         KC_F,         KC_G,                           KC_H,         KC_J,         KC_K,         KC_L,         KC_SCLN,      KC_ENT,
+        LCTL_TAB,     KC_A,         KC_S,         KC_D,         KC_F,         KC_G,                           KC_H,         KC_J,         KC_K,         KC_L,         KC_SCLN,      RCTL_ENT,
     //│             │             │             │             │             │             │                 │             │             │             │             │             │                           │
     //├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ┌─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼───────────────────────────┤
     //│             │             │             │             │             │             │   │             │             │             │             │             │             │                           │
@@ -47,7 +55,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     //│             │             │             │             │             │             │   │             │             │             │             │             │             │                           │
     //├─────────────┼─────────────┼─────────┬───┴─────────────┼─────────────┴─────────────┤   ├─────────────┴─────────────┴───┬─────────┴─────┬───────┴───────────┬─┴───────────┬─┴───────────────────────────┤
     //│             │             │         │                 │                           │   │                               │               │                   │             │                             │
-        KC_LCTL,      KC_LGUI,                KC_LALT,          LRT_SPC,                        LLT_BSPC,                       KC_RALT,                            KC_RGUI,      KC_RCTL
+        KC_LAPO,      KC_LGUI,                LSFT_ENT,         LRT_SPC,                        LLT_BSPC,                       RSFT_ESC,                           KC_RGUI,      KC_RAPC
     //│             │             │         │                 │                           │   │                               │               │                   │             │                             │
     //└─────────────┴─────────────┘         └─────────────────┴───────────────────────────┘   └───────────────────────────────┴───────────────┘                   └─────────────┴─────────────────────────────┘
     ),
@@ -55,7 +63,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_KRAUTCAT_RIGHTED] = LAYOUT(
     //┌─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────┐                 ┌─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────┐
     //│             │             │             │             │             │             │                 │             │             │             │             │             │             │             │
-        KC_GRV,       KC_1,         KC_2,         KC_3,         KC_4,         KC_5,                           KC_6,         KC_7,         KC_8,         KC_9,         KC_0,         KC_MINS,      KC_EQL,
+        KC_GRV,       KC_F1,        KC_F2,        KC_F3,        KC_F4,        KC_F5,                           KC_6,         KC_7,         KC_8,         KC_9,         KC_0,         KC_MINS,      KC_EQL,
     //│             │             │             │             │             │             │                 │             │             │             │             │             │             │             │
     //├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤                 ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┴─────────────┤
     //│             │             │             │             │             │             │                 │             │             │             │             │             │                           │
@@ -75,7 +83,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_KRAUTCAT_LEFTED] = LAYOUT(
     //┌─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────┐                 ┌─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────┐
     //│             │             │             │             │             │             │                 │             │             │             │             │             │             │             │
-        KC_GRV,       KC_F1,        KC_F2,        KC_F3,        KC_F4,        KC_F5,                          KC_F6,        KC_F7,        KC_F8,        KC_F9,        KC_F10,       KC_F11,       KC_F12,
+        KC_GRV,       KC_1,         KC_2,         KC_3,         KC_4,         KC_5,                           KC_F6,        KC_F7,        KC_F8,        KC_F9,        KC_F10,       KC_F11,       KC_F12,
     //│             │             │             │             │             │             │                 │             │             │             │             │             │             │             │
     //├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤                 ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┴─────────────┤
     //│             │             │             │             │             │             │                 │             │             │             │             │             │                           │
