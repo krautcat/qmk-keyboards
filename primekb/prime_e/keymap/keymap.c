@@ -30,10 +30,11 @@ enum krautcat_keycodes {
     LCTL_TAB = LCTL_T(KC_TAB),	// Tab is tap, hold is Left Control.
     RCTL_ENT = RCTL_T(KC_ENT),  // Enter is tap, hold is Right Control.
 
+    LALT_ESC = LALT_T(KC_ESC),  // Esc is tapm hold is Left Alt.
+
     LSFT_ENT = LSFT_T(KC_ENT),	// Enter is tap, hold is Left Shift.
 	RSFT_ESC = RSFT_T(KC_ESC),	// Escape is tap, hold is Right Shift.
 
-    
 
     LRT_SPC = LT(_KRAUTCAT_RIGHTED, KC_SPC),    // Tap is Space, hold is turn on layer one, _KRAUTCAT_RIGHTED.
     LLT_BSPC = LT(_KRAUTCAT_LEFTED, KC_BSPC),   // Tap is Backspace, hold is turn on layer two, _KRAUTCAT_LEFTED.
@@ -43,7 +44,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_KRAUTCAT_BASE] = LAYOUT(
     //┌─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────┐                 ┌─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────┐
     //│             │             │             │             │             │             │                 │             │             │             │             │             │             │             │
-        KC_GESC,      KC_Q,         KC_W,         KC_E,         KC_R,         KC_T,                           KC_Y,         KC_U,         KC_I,         KC_O,         KC_P,         KC_DEL,       KC_BSPC,
+        LALT_ESC,     KC_Q,         KC_W,         KC_E,         KC_R,         KC_T,                           KC_Y,         KC_U,         KC_I,         KC_O,         KC_P,         KC_BSPC,      KC_RALT,
     //│             │             │             │             │             │             │                 │             │             │             │             │             │             │             │
     //├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤                 ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┴─────────────┤
     //│             │             │             │             │             │             │                 │             │             │             │             │             │                           │
@@ -91,7 +92,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     //│             │             │             │             │             │             │                 │             │             │             │             │             │                           │
     //├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ┌─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼───────────────────────────┤
     //│             │             │             │             │             │             │   │             │             │             │             │             │             │                           │
-        _______,      _______,       _______,      _______,     KC_LBRC,      KC_LCBR,          MO(3),        KC_RCBR,      KC_RBRC,      _______,      _______,      _______,      _______,
+        _______,      _______,       KC_END,      KC_PGDN,      KC_LBRC,      KC_LCBR,          MO(3),        KC_RCBR,      KC_RBRC,      KC_PGUP,      KC_HOME,      _______,      _______,
     //│             │             │             │             │             │             │   │             │             │             │             │             │             │                           │
     //├─────────────┼─────────────┼─────────┬───┴─────────────┼─────────────┴─────────────┤   ├─────────────┴─────────────┴───┬─────────┴─────┬───────┴───────────┬─┴───────────┬─┴───────────────────────────┤
     //│             │             │         │                 │                           │   │                               │               │                   │             │                             │
