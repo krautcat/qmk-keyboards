@@ -59,7 +59,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     //│         │         │         │         │         │         │                            │         │         │         │         │         │         │
     //├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤                            ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤
     //│         │         │         │         │         │         │                            │         │         │         │         │         │         │
-        KC_LCTL,  _______,  _______,  _______,  KC_MINS,  KC_EQL,                                KC_LEFT,  KC_DOWN,  KC_UP,    KC_RGHT,  KC_QUOT,  _______,
+        KC_LCTL,  _______,  _______,  _______,  KC_MINS,  KC_EQL,                                KC_LEFT,  KC_DOWN,  KC_UP,    KC_RGHT,  KC_QUOT,  KC_RCTL,
     //│         │         │         │         │         │         │                            │         │         │         │         │         │         │
     //├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┐        ┌─────────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤
     //│         │         │         │         │         │         │         │        │         │         │         │         │         │         │         │
@@ -144,3 +144,12 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     //                                   └─────────┴─────────┴─────────┘                  └─────────┴─────────┴─────────┘
     )
 };
+
+bool get_ignore_mod_tap_interrupt(uint16_t keycode, keyrecord_t *record) {
+    switch (keycode) {
+        case LSFT_SPC:
+            return true;
+        default:
+            return false;
+    }
+}
