@@ -20,6 +20,16 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #include "krautcat.h"
 
+enum krautcat_keycodes {
+    LRT_TAB = LT(_KRAUTCAT_RIGHTED, KC_TAB),    // Tap is Enter, hold is turn on layer one, _KRAUTCAT_RIGHTED.
+    LLT_ESC = LT(_KRAUTCAT_LEFTED, KC_ESC),     // Tap is Escape, hold is turn on layer two, _KRAUTCAT_LEFTED.
+};
+
+enum layers_ac {
+    LM_WM = LM(_KRAUTCAT_WM, MOD_LGUI),
+    MO_WM = MO(_KRAUTCAT_WM),
+};
+
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_KRAUTCAT_BASE] = LAYOUT_split_3x6_3(
     //┌─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────┐                             ┌─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────┐
@@ -61,6 +71,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     //                                                 └─────────────┴─────────────┴─────────────┘               └─────────────┴─────────────┴─────────────┘
     ),
 
+    
     [_KRAUTCAT_LEFTED] = LAYOUT_split_3x6_3(
     //┌─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────┐                             ┌─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────┐
     //│             │             │             │             │             │             │                             │             │             │             │             │             │             │
