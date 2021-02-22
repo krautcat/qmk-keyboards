@@ -1,1 +1,2 @@
-OLED_DRIVER_ENABLE  = yes
+OLED_DRIVER_ENABLE = no
+USER_NAME = krautcat
