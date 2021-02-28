@@ -31,7 +31,11 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define USE_SERIAL_PD2
 
 #define IGNORE_MOD_TAP_INTERRUPT
-#define TAPPING_TERM 170
+#if KEYCAPS == KEYCAPS_SA || KEYCAPS == KEYCAPS_MT3
+    #define TAPPING_TERM 170
+#else
+    #define TAPPING_TERM 150
+#endif
 
 #ifdef RGBLIGHT_ENABLE
     #undef RGBLED_NUM
@@ -44,3 +48,5 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #endif
 
 #define OLED_FONT_H "keyboards/crkbd/lib/glcdfont.c"
+
+#define MASTER_RIGHT
