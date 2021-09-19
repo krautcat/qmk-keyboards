@@ -18,6 +18,7 @@ This repository contains keymaps used in my keyboards with QMK firmware.
 #### With three rows
 
  * [Corne](https://github.com/foostan/crkbd)
+ * [Cornelius](https://github.com/foostan/corneliuskbd)
 
 ##### With four rows
 
